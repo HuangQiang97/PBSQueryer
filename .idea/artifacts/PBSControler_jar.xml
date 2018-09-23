@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="PBSControler:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PBSControler_jar</output-path>
+    <root id="root">
+      <element id="archive" name="PBSControler.jar">
+        <element id="module-output" name="PBSControler" />
+      </element>
+      <element id="library" level="project" name="commons-dbcp-1.4" />
+    </root>
+  </artifact>
+</component>
