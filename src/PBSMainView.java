@@ -166,8 +166,11 @@ public class PBSMainView {
     */
     private void queryAll(){
         List<PBSInfo> recoeds= pbsDao.queryAllInfo();
+
         if (recoeds.size()!=0) {
             printRecord(recoeds);
+            ShowPBS.writeName(recoeds);
+            ShowPBS.showImage();
         }else {
             System.out.println("查询结果为空！");
         }
@@ -193,6 +196,8 @@ public class PBSMainView {
        List<PBSInfo>result=pbsDao.queryByDistance(x,y,targetDistance);
         if (result.size()!=0){
             printRecord(result);
+            ShowPBS.writeName(result);
+            ShowPBS.showImage();
         }else{
             System.out.println("\n查询结果为空！\n");
         }
@@ -217,6 +222,8 @@ public class PBSMainView {
         List<PBSInfo> recoeds=pbsDao.queryByDate(startDate,endDate);
         if (recoeds.size()!=0){
             printRecord(recoeds);
+            ShowPBS.writeName(recoeds);
+            ShowPBS.showImage();
         }else{
             System.out.println("\n查询结果为空！\n");
         }
@@ -241,7 +248,11 @@ public class PBSMainView {
         String SQL=scanner.nextLine();
         Object result= pbsDao.defineFunction(SQL);
         try{
-            printRecord( (List<PBSInfo>)result);
+            List records=(List<PBSInfo>)result;
+            printRecord(records );
+            ShowPBS.writeName(records);
+            ShowPBS.showImage();
+
         }catch (Exception e){
             System.out.println("查询结果："+result.toString());
         }
